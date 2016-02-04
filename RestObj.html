@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+	<title>Restaurant Objects</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+	<script type="text/javascript" src="restobj.js"></script>
+</head>
+<body ng-controller="mainTroller">
+
+	<h1 ng-bind="restaurant.name"></h1>
+	<h2>Menu</h2>
+
+	<h3>Drinks:</h3>
+	<ul>
+		<li ng-repeat="drinks in menu.drink" ng-style="drink.display">{{drinks.name}}<button ng-click="addFood(drink)">Add To Order</button></li>
+	</ul>
+	
+	<h3>Meals:</h3>
+	<ul>
+		<li ng-repeat="food in menu.plate" ng-style="plate.display">{{food.name}}<button ng-click="addFood(plate)">Add To Order</button></li>
+	</ul>
+
+	<h2>Order Total:</h2>
+
+</body>
